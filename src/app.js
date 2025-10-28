@@ -6,6 +6,9 @@ import { protect } from './middleware/authMiddleware.js';
 const app = express();
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('🚀 Server is running successfully on Railway!');
+});
 app.use('/api/auth', authRoutes);       // Register & Login
 app.use('/api/url', protect, urlRoutes); // Protected URL routes
 
