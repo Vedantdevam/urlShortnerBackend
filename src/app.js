@@ -4,6 +4,7 @@ import authRoutes from './routes/authRoutes.js';
 import { protect } from './middleware/authMiddleware.js';
 import cors from 'cors';
 
+const app = express();
 app.use(cors({
   origin: [
     'http://localhost:3000',        // for local development
@@ -12,8 +13,6 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
-
-const app = express();
 app.use(express.json());
 
 app.get('/', (req, res) => {
