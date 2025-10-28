@@ -12,7 +12,7 @@ export const shortenUrl = async (req, res) => {
 
     // Create a new short code
     const shortCode = generateShortId(7);
-    const shortUrl = `${baseUrl}/${shortCode}`;
+    const shortUrl = `${baseUrl}/api/url/${shortCode}`;
 
     url = new Url({ longUrl, shortCode ,user: req.user._id });
     await url.save();
