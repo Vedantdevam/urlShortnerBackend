@@ -8,7 +8,6 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:3000',        // for local development
-    'https://your-frontend-domain.com' // for when you deploy frontend
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
